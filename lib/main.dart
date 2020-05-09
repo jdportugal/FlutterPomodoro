@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'hover_extension.dart';
 
 void main() {
   runApp(MyApp());
@@ -157,7 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Expanded(
                       flex: 20,
-                      child: button("Pause", paused, 345, 105, 50),
+                      child: button("Pause", paused, 345, 105, 50)
+                          .showCursosOnHover,
                     ),
                     Expanded(
                       flex: 4,
@@ -165,7 +167,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Expanded(
                       flex: 20,
-                      child: button("25 Min", reset_25, 345, 105, 50),
+                      child: button("25 Min", reset_25, 345, 105, 50)
+                          .showCursosOnHover,
                     ),
                     Expanded(
                       flex: 4,
@@ -173,7 +176,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Expanded(
                       flex: 20,
-                      child: button("5 Min", reset_5, 345, 105, 50),
+                      child: button("5 Min", reset_5, 345, 105, 50)
+                          .showCursosOnHover,
                     ),
                     Expanded(
                       flex: 4,
@@ -181,7 +185,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Expanded(
                       flex: 20,
-                      child: button("Reset", reset, 345, 105, 50),
+                      child: button("Reset", reset, 345, 105, 50)
+                          .showCursosOnHover,
                     ),
                     Expanded(
                       flex: 4,
@@ -202,10 +207,12 @@ class _MyHomePageState extends State<MyHomePage> {
     if (paused == 1) {
       return Container();
     } else {
-      return Stack(alignment: Alignment.center, children: <Widget>[
-        button("", 1, size_center_button, size_center_button, 500),
-        button("", 0, 100, 100, 500),
-      ]);
+      return AspectRatio(
+          aspectRatio: 1 / 1,
+          child: Stack(alignment: Alignment.center, children: <Widget>[
+            button("", 1, size_center_button, size_center_button, 500),
+            button("", 0, 100, 100, 500),
+          ]));
     }
   }
 
@@ -254,6 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ]),
         ),
         MaterialButton(
+          hoverColor: Colors.transparent,
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
           child: Container(
@@ -336,6 +344,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ]),
         ),
         MaterialButton(
+            hoverColor: Colors.transparent,
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             child: Container(
