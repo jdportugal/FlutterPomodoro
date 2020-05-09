@@ -303,7 +303,7 @@ class _MyHomePageState extends State<MyHomePage> {
               }
             });
           },
-        )
+        ).showCursosOnHover
       ],
     );
   }
@@ -376,7 +376,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }
                 }
               });
-            })
+            }).showCursosOnHover,
       ],
     );
   }
